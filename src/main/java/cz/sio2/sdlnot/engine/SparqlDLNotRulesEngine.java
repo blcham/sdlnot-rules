@@ -167,7 +167,7 @@ public class SparqlDLNotRulesEngine {
 	private Query getSelectExampleQuery(final Query q) {
 		final Query q2 = QueryFactory.create(q);
 		q2.setQuerySelectType();
-		q2.setLimit(10);
+		q2.setLimit(500);
 		return q2;
 	}
 
