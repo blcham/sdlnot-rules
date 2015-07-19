@@ -210,7 +210,7 @@ public class RuleSpec {
 	
 	public File getResultFile(final Rule rule) {
 		return new File(getOutputDir().getPath() + File.separator
-				+ rule.getName() + ".owl");
+				+ rule.getName() + ".rdf");
 	}
 	
 	public void revert(Rule rule) throws IOException {
