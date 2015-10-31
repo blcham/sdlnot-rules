@@ -38,7 +38,7 @@ public class SparqlDLNotRulesCLI {
 		
 		final CommandLineParser parser = new GnuParser();
 		try {
-			final CommandLine cmd = parser.parse( options, args);
+			final CommandLine cmd = parser.parse(options, args);
 			
 			if (cmd.getOptions().length == 0 || cmd.hasOption("-h")) {
 				HelpFormatter formatter = new HelpFormatter();
@@ -59,8 +59,12 @@ public class SparqlDLNotRulesCLI {
 			if (cmd.hasOption(oDistinguished.getOpt())) {
 				dist = true;
 			}
-			
+
 			QueryEngineType regime = QueryEngineType.PelletMIXED;
+			if (cmd.hasOption(oRegime.getOpt())) {
+				String regimeStr = cmd.getOptionValue(oRegime.getOpt());
+				regime = QueryEngineType.valueOf(regimeStr);
+			}
 			if (cmd.hasOption(oDistinguished.getOpt())) {
 				dist = true;
 			}			
